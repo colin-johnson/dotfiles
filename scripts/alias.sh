@@ -2,14 +2,13 @@
 # shellcheck source=/dev/null
 
 # file path aliases
-alias to:cabochon='cd $HOME/opallabs/cabochon'
-alias to:developer='cd $HOME/opallabs/cabochon/developer'
-alias to:techdocs='cd $HOME/opallabs/cabochon/techdocs'
-alias to:monolith='cd $HOME/opallabs/cabochon/packages/monolith'
-alias to:universe='cd $HOME/opallabs/cabochon/packages/universe'
-alias to:kuiper='cd $HOME/opallabs/cabochon/packages/universe/packages/kuiper'
-alias to:lapidary='cd $HOME/opallabs/cabochon/packages/universe/packages/lapidary'
-alias to:tachyon='cd $HOME/opallabs/cabochon/packages/universe/packages/tachyon'
+alias cabo='cd $HOME/opallabs/cabochon'
+alias dev='cd $HOME/opallabs/cabochon/developer'
+alias mono='cd $HOME/opallabs/cabochon/packages/monolith'
+alias uni='cd $HOME/opallabs/cabochon/packages/universe'
+alias kui='cd $HOME/opallabs/cabochon/packages/universe/packages/kuiper'
+alias lapi='cd $HOME/opallabs/cabochon/packages/universe/packages/lapidary'
+alias tach='cd $HOME/opallabs/cabochon/packages/universe/packages/tachyon'
 
 # re-source bash profile updates in current terminal
 alias update:bash-profile='source ~/.bash_profile'
@@ -69,13 +68,30 @@ alias start:lapidary-storybook='docker service scale opal_lapidary-storybook=1'
 alias stop:lapidary-storybook='docker service scale opal_lapidary-storybook=0'
 
 # rails console and debugging commands
-alias start:rails-console='yarn docker:rails:console'
+alias rails-console='yarn docker:rails:console'
 alias start:rails-debug='yarn docker:rails:debug_monolith:start'
 alias stop:rails-debug='yarn docker:rails:debug_monolith:stop'
 
 # Git helpers
-alias git:local-branches='git branch --merged | grep -v "\\*"'
-alias git:cleanup-local-branches='git branch --merged | grep -v "\\*" | xargs -n 1 git branch -d'
+alias master='git checkout master && git pull'
+alias gs='git status'
+alias gch='git checkout'
+alias fetch='git fetch'
+alias gb='git branch'
+alias push='git push'
+alias pull='git pull'
+alias stash='git stash'
+alias merge='git merge'
+alias apply='git stash apply'
+alias g='git'
+alias ga='git add'
+alias gaa='git add -A'
+alias gcm='git commit -m '
+alias gc='git commit '
+alias continue='git rebase --continue'
+alias abort='git rebase --abort'
+alias skip='git rebase --skip'
+alias cleanup='git branch --merged | grep -v "\\*" | xargs -n 1 git branch -d'
 
 # misc
 alias grepc='grep --color'
